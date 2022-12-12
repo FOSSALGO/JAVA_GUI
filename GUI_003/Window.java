@@ -15,8 +15,8 @@ import javax.swing.JTextField;
 public class Window {
 
     public static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static final int n = 23;
-    public static final int size = ALPHABET.length();//26
+    public static final int N = 23;
+    public static final int SIZE = ALPHABET.length();//26
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Crypto Caesar Cipher");
@@ -49,7 +49,7 @@ public class Window {
         jTextField2.setPreferredSize(new Dimension(100, 28));
         contentPane.add(jTextField2);
 
-        //AKSI
+        //AKSI TOMBOL
         jButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,13 +59,12 @@ public class Window {
                 for (int i = 0; i < plaintext.length(); i++) {
                     char cin = plaintext.charAt(i);
                     int x = ALPHABET.indexOf(cin);//mencari posisi huruf di alphabet
-                    int ex = (x + n) % size;
+                    int ex = (x + N) % SIZE;
                     char cout = ALPHABET.charAt(ex);
                     ciphertext = ciphertext + cout;//konkatenasi
                 }
                 jTextField2.setText(ciphertext);
             }
-
         });
 
         jButton2.addActionListener(new ActionListener() {
@@ -77,17 +76,15 @@ public class Window {
                 for (int i = 0; i < ciphertext.length(); i++) {
                     char cin = ciphertext.charAt(i);
                     int x = ALPHABET.indexOf(cin);//mencari posisi huruf di alphabet
-                    int dx = (x - n) % size;
+                    int dx = (x - N) % SIZE;
                     if (dx < 0) {
-                        dx = size + dx;
+                        dx = SIZE + dx;
                     }
                     char cout = ALPHABET.charAt(dx);
                     plaintext = plaintext + cout;
                 }
                 jTextField1.setText(plaintext);
-
             }
-
         });
 
         frame.setVisible(true);
