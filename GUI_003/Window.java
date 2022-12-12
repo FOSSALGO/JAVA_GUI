@@ -22,8 +22,8 @@ public class Window {
         JFrame frame = new JFrame("Crypto Caesar Cipher");
         frame.setSize(600, 300);//atur lebar dan tinggi window
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        ImageIcon imageIcon = new ImageIcon("logo.png");
-        frame.setIconImage(imageIcon.getImage());
+        //ImageIcon imageIcon = new ImageIcon("logo.png");
+        //frame.setIconImage(imageIcon.getImage());
 
         Container contentPane = frame.getContentPane();
         contentPane.setBackground(Color.decode("#d35400"));
